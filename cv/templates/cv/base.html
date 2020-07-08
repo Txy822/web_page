@@ -1,0 +1,46 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Tesfahun Curriculum Vitae</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/cv.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+
+            <a href="{% url 'cv_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+
+
+        <header id="header">
+          <div id="logo"><img src="{% static 'css/cv_logo.jpg' %}" alt="" /></div>
+          <!-- <div id="top_menu"><a href="#">Tesfahun Blog</a> | <a href="cv/">Resume(cv)</a>  | About |</div> -->
+
+          <!-- <div id="topbanner"><img src="{% static 'top_banner.jpg' %}" alt="" /></div> -->
+        </header>
+            <h1><a href="/cv/">Curriculum Vitae(CV)</a></h1>
+            <!-- <h2><a href="/">Tesfahun Blog </a>|<a href="/cv/">Tesfahun Curriculum Vitae </a></h2> -->
+            <h3><a href="/">|Home </a><a href="/">| Personal Blogs </a><a href="/admin/">Login as Admin | </a></h3>
+
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        <footer id="footer">Copyright &copy;
+          <script type="text/JavaScript">
+          document.write(new Date().getFullYear());
+          </script> My blog
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </footer>
+    </body>
+</html>

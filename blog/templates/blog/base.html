@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<html>
+    <head>
+        <title>Tesfahun blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+		{% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+
+        {% endif %}
+        <header id="header">
+          <div id="logo"><img src="{% static 'css/blog_logo.png' %}" alt="" /></div>
+          <!-- <div id="top_menu"><a href="#">Tesfahun Blog</a> | <a href="cv/">Resume(cv)</a>  | About |</div> -->
+
+          <!-- <div id="topbanner"><img src="{% static 'css/top_banner.png' %}" alt="" /></div> -->
+        </header>
+            <h1><a href="/">Personal Blogs</a></h1>
+            <h3><a href="/">|Home </a><a href="/cv/">|Curriculum Vitae(CV) | </a><a href="/admin/">Login as Admin | </a></h3>
+
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        <footer id="footer">Copyright &copy;
+          <script type="text/JavaScript">
+          document.write(new Date().getFullYear());
+          </script> My blog
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </footer>
+    </body>
+</html>
