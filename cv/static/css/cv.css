@@ -169,3 +169,31 @@ input {
    border: 1px solid green;
    border-radius: 3px;
 }
+#contactDetails {
+	float: right;
+}
+
+#contactDetails ul {
+	list-style-type: none;
+	font-size: 0.9em;
+	margin-top: 70px;
+}
+
+#contactDetails ul li {
+	margin-bottom: 3px;
+	color: #444;
+}
+
+#contactDetails ul li a, a[href^=tel] {
+	color: #444;
+	text-decoration: none;
+	-webkit-transition: all .3s ease-in;
+	-moz-transition: all .3s ease-in;
+	-o-transition: all .3s ease-in;
+	-ms-transition: all .3s ease-in;
+	transition: all .3s ease-in;
+}
+
+#contactDetails ul li a:hover {
+	color: #cf8a05;
+}
