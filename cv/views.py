@@ -1,51 +1,51 @@
 
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Cv
+from .models import Cv_section
 from django.shortcuts import render, get_object_or_404
-from .forms import CvForm
+from .forms import Cv_section_form
 from django.shortcuts import redirect
 
 
-def cv_list(request):
-    cvs = Cv.objects.all()
-    return render(request, 'cv/cv_list.html', {'cvs': cvs})
+def cv_section_list(request):
+    cv_sections = Cv_section.objects.all()
+    return render(request, 'cv/cv_section_list.html', {'cv_sections': cv_sections})
 
 
-def cv_detail(request, pk):
-    cv = get_object_or_404(Cv, pk=pk)
-    return render(request, 'cv/cv_detail.html', {'cv': cv})
+def cv_section_detail(request, pk):
+    cv_section = get_object_or_404(Cv_section, pk=pk)
+    return render(request, 'cv/cv_section_detail.html', {'cv_section': cv_section})
 
 
-def cv_new(request):
+def cv_section_new(request):
     if request.method == "POST":
-        form = CvForm(request.POST)
+        form = Cv_section_form(request.POST)
         if form.is_valid():
-            cv = form.save(commit=False)
+            cv_section = form.save(commit=False)
            # post.published_date = timezone.now()
-            cv.save()
-            return redirect('cv_detail', pk=cv.pk)
+            cv_section.save()
+            return redirect('cv_section_detail', pk=cv_section.pk)
     else:
-        form = CvForm()
-    return render(request, 'cv/cv_edit.html', {'form': form})
+        form = Cv_section_form()
+    return render(request, 'cv/cv_section_edit.html', {'form': form})
 
 
-def cv_edit(request, pk):
-    cv = get_object_or_404(Cv, pk=pk)
+def cv_section_edit(request, pk):
+    cv_section = get_object_or_404(Cv_section, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=cv)
+        form = PostForm(request.POST, instance=cv_section)
         if form.is_valid():
-            cv = form.save(commit=False)
+            cv_section = form.save(commit=False)
 
             # post.published_date = timezone.now()
-            cv.save()
-            return redirect('cv_detail', pk=cv.pk)
+            cv_section.save()
+            return redirect('cv_section_detail', pk=cv_section.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'cv/cv_edit.html', {'form': form})
+    return render(request, 'cv/cv_section_edit.html', {'form': form})
 
 
-def cv_remove(request, pk):
-    cv = get_object_or_404(Cv, pk=pk)
-    cv.delete()
-    return redirect('cv_list')
+def cv_section_remove(request, pk):
+    cv_section = get_object_or_404(Cv_section, pk=pk)
+    cv_section.delete()
+    return redirect('cv_section_list')

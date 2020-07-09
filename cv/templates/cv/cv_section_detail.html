@@ -1,0 +1,15 @@
+
+{% extends 'cv/base.html' %}
+
+
+{% block content %}
+    <div class="cv">
+    {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'cv_section_edit' pk=cv_section.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'cv_section_remove' pk=cv_section.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+   {%endif%}
+        <h2>{{ cv_section.title }}</h2>
+        <p>{{ cv_section.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

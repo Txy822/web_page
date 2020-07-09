@@ -3,7 +3,7 @@ from django.db import models
 
 
 
-class Cv(models.Model):
+class Cv_section(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
 
@@ -14,4 +14,4 @@ class Cv(models.Model):
  # The rest of our model code
 
     class Meta:
-        verbose_name_plural = "cvies"
+        verbose_name_plural = "cv_sections"

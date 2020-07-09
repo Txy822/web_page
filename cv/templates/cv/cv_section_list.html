@@ -2,10 +2,10 @@
 
 
 {% block content %}
-    {% for cv in cvs %}
+    {% for cv in cv_sections %}
         <div class="cv">
 
-            <h2><a href="{% url 'cv_detail' pk=cv.pk %}">{{ cv.title }}</a></h2>
+            <h2><a href="{% url 'cv_section_detail' pk=cv.pk %}">{{ cv.title }}</a></h2>
             <p>{{ cv.text|linebreaksbr }}</p>
         </div>
     {% endfor %}

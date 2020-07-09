@@ -3,9 +3,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.cv_list, name='cv_list'),
-    path('cv/<int:pk>/', views.cv_detail, name='cv_detail'),
-    path('cv/new/', views.cv_new, name='cv_new'),
-    path('cv/<int:pk>/edit/', views.cv_edit, name='cv_edit'),
-    path('cvt/<pk>/remove/', views.cv_remove, name='cv_remove'),
+    path('', views.cv_section_list, name='cv_section_list'),
+    path('cv/<int:pk>/', views.cv_section_detail, name='cv_section_detail'),
+    path('cv/new/', views.cv_section_new, name='cv_section_new'),
+    path('cv/<int:pk>/edit/', views.cv_section_edit, name='cv_section_edit'),
+    path('cvt/<pk>/remove/', views.cv_section_remove, name='cv_section_remove'),
 ]
