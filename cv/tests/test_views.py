@@ -1,12 +1,12 @@
 from django.test import TestCase
 
 # Create your tests here.
-from .models import Cv_section
+from cv.models import Cv_section
 from django.urls import resolve
 from django.test import TestCase
 from django.http import HttpRequest
 
-from .views import cv_section_list
+from cv.views import cv_section_list
 
 
 # Another Test: Entrys
