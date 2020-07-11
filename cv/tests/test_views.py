@@ -19,7 +19,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,200)
         print(response)
         self.assertTemplateUsed(response,'cv/cv_section_list.html')
-        
+
     def test_cv_section_detail_GET(self):
         response=self.client.get(self.cv_section_detail_url)
         self.assertEquals(response.status_code,404)
