@@ -7,10 +7,12 @@ from cv.models import Cv_section
 
 class UnitTest_template(TestCase):
 
-    def setUp(self):
+    def setUp(self)
+
         self.client=Client()
 
     def test_homepage_template(self):
+        
         #cv_section_list_url=reverse('cv/cv_section_list/')
         #response=self.client.get('/')
         response=self.client.get('/cv/')
