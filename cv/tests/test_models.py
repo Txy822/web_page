@@ -2,8 +2,8 @@ from django.test import TestCase
 
 from cv.models import Cv_section
 
-class CvSectionTest(TestCase):
-    
+class CvSectionModelTest(TestCase):
+
     @classmethod
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
