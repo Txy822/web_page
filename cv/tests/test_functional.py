@@ -3,6 +3,10 @@ from selenium import webdriver
 import unittest
 
 class FunctionalTestCase(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        print("setUpTestData: Run once to set up non-modified data for all class methods.")
+        pass
 
     def setUp(self):
         self.browser = webdriver.Firefox()
