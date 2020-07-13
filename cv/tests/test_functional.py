@@ -10,6 +10,7 @@ class FunctionalTestCase(TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
+        
     def test_homepage(self):
         response = self.client.get('/cv')
         self.assertEqual(response.status_code, 301)

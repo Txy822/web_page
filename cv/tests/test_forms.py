@@ -7,3 +7,6 @@ class CvSectionFormTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         pass
+    def test_form(self):
+        pass
+        
