@@ -32,6 +32,5 @@ class FunctionalTestCase(TestCase):
     def tearDown(self):
         self.browser.quit()
 
-
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
