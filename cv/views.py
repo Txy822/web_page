@@ -33,7 +33,7 @@ def cv_section_new(request):
 def cv_section_edit(request, pk):
     cv_section = get_object_or_404(Cv_section, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=cv_section)
+        form = Cv_section_form(request.POST, instance=cv_section)
         if form.is_valid():
             cv_section = form.save(commit=False)
 
@@ -41,7 +41,7 @@ def cv_section_edit(request, pk):
             cv_section.save()
             return redirect('cv_section_detail', pk=cv_section.pk)
     else:
-        form = PostForm(instance=post)
+        form = Cv_section_form(instance=cv_section)
     return render(request, 'cv/cv_section_edit.html', {'form': form})
 
 

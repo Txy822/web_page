@@ -11,18 +11,21 @@ class TestViews(TestCase):
         self.cv_section_edit_url=reverse('cv_section_edit',args=[1])
         self.cv_section_remove_url=reverse('cv_section_remove',args=[1])
 
+        Cv_section.objects.create(
+        title='title',
+        text='my text'
+        )
+
 
     def test_cv_section_list_GET(self):
         response=self.client.get(self.cv_section_list_url)
         self.assertEquals(response.status_code,200)
-        print(response)
         self.assertTemplateUsed(response,'cv/cv_section_list.html')
 
     def test_cv_section_detail_GET(self):
         response=self.client.get(self.cv_section_detail_url)
-        self.assertEquals(response.status_code,404)
-        print(response)
-        #self.assertTemplateUsed(response,'cv/cv_section_detail.html')
+        self.assertEquals(response.status_code,200)
+        self.assertTemplateUsed(response,'cv/cv_section_detail.html')
 
     def test_cv_section_new_GET(self):
         response=self.client.get(self.cv_section_new_url)
@@ -30,14 +33,14 @@ class TestViews(TestCase):
 
     def test_cv_section_edit_GET(self):
         response=self.client.get(self.cv_section_edit_url)
-        self.assertEquals(response.status_code,404)
-        print(response)
-        #self.assertTemplateUsed(response,'cv/cv_section_edit.html')
+        self.assertEquals(response.status_code,200)
+        self.assertTemplateUsed(response,'cv/cv_section_edit.html')
 
     def test_cv_section_remove_GET(self):
         response=self.client.get(self.cv_section_remove_url)
-        self.assertEquals(response.status_code,404)
-        print(response)
+        self.assertEquals(response.status_code,302)
+
+
 
 
 
