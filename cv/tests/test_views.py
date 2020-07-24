@@ -2,8 +2,6 @@ from django.test import TestCase,Client
 from django.urls import reverse
 from cv.models import Cv_section
 
-
-
 class TestViews(TestCase):
     def setUp(self):
         self.client=Client()
