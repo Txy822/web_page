@@ -78,6 +78,10 @@ body {
    text-align: justify;
    color: #474747;
 }
+video {
+  display: block;
+  margin: auto;
+}
 h1 {
    color: #270c39;
 }
