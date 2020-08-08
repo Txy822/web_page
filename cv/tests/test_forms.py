@@ -8,8 +8,8 @@ class CvSectionFormTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         pass
-    def test_form(self):
-        pass
+
+
     def test_cv_section_form_valid_data(self):
         form =Cv_section_form(data={
         'title' : 'Form Title 123',
