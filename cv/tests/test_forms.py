@@ -5,16 +5,12 @@ from cv.forms import Cv_section_form
 
 class CvSectionFormTest(TestCase):
 
-    @classmethod
-    def setUpTestData(cls):
-        pass
-
-
     def test_cv_section_form_valid_data(self):
         form =Cv_section_form(data={
-        'title' : 'Form Title 123',
+        'title' : 'Form Title',
         'text' : 'this is my form text'
         })
+
         self.assertTrue(form.is_valid())
 
     def test_cv_section_form_no_data(self):
