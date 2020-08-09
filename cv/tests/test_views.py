@@ -29,6 +29,7 @@ class TestViews(TestCase):
 
     def test_cv_section_new_GET(self):
         response=self.client.get(self.cv_section_new_url)
+        self.assertIn('title', response.content.decode())
         self.assertEquals(response.status_code,200)
 
     def test_cv_section_edit_GET(self):
@@ -39,6 +40,11 @@ class TestViews(TestCase):
     def test_cv_section_remove_GET(self):
         response=self.client.get(self.cv_section_remove_url)
         self.assertEquals(response.status_code,302)
+
+    def test_can_save_a_POST_request(self):
+        response=self.client.post(self.cv_section_new_url)
+        self.assertIn('title', response.content.decode())
+
 
 
 
