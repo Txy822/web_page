@@ -40,7 +40,7 @@ class TestViews(TestCase):
     def test_cv_section_remove_GET(self):
         response=self.client.get(self.cv_section_remove_url)
         self.assertEquals(response.status_code,302)
-
+        #can save post request
     def test_can_save_a_POST_request(self):
         response=self.client.post(self.cv_section_new_url)
         self.assertIn('title', response.content.decode())
