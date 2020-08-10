@@ -4,5 +4,7 @@
 __pycache__
 myvenv
 db.sqlite3
+geckodriver.exe
+geckodriver.log
 /static
 .DS_Store
