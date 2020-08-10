@@ -44,6 +44,9 @@ class TestViews(TestCase):
     def test_can_save_a_POST_request(self):
         response=self.client.post(self.cv_section_new_url)
         self.assertIn('title', response.content.decode())
+    def test_only_saves_items_when_necessary(self):
+        self.client.get('/cv')
+        self.assertEqual(Cv_section.objects.count(), 1)
 
 
 
