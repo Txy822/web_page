@@ -9,7 +9,12 @@
     font-size: 36pt;
     text-decoration: none;
 }
-
+.highlighted{
+    /* background-color:#000; */
+    /* background-color:#blue; */
+    /* color:#fff; */
+    color: blue;
+ }
 .content {
     margin-left: 40px;
 }
