@@ -16,6 +16,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
     def snippet(self):
         return self.text[:56]+'.....'
 # Create your models here.
