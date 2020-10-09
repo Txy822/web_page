@@ -35,8 +35,6 @@ def cv_section_edit(request, pk):
         form = Cv_section_form(request.POST, instance=cv_section)
         if form.is_valid():
             cv_section = form.save(commit=False)
-
-            # post.published_date = timezone.now()
             cv_section.save()
             return redirect('cv_section_detail', pk=cv_section.pk)
     else:
